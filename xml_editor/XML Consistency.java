@@ -6,6 +6,22 @@ import java.util.Stack;
 
 public class Project2 
 {
+    public static String listtostring(ArrayList<String> lis) // Converting ArrayList to String 
+    {
+        StringBuffer a = new StringBuffer() ;
+        for (int i =0  ; i< lis.size() ; i++)
+        {
+          a.append(lis.get(i)) ;
+        }
+        return a.toString() ;
+    }
+     public static void print(ArrayList<String> fixError) //Printing the XML Code after Correction
+    {    
+        for (int i = 0; i < fixError.size(); i ++)
+        {
+           System.out.println( fixError.get(i));
+        }
+    }
     public static int find_char(String line, char x)
     {
         return line.indexOf(x) ; // returns the index of found char or -1 if not found
