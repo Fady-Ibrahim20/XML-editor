@@ -4,45 +4,55 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Minify {
-    private static void minify(String originalfilename,String minifiedfilename) throws IOException {
+    private static String minify(String data,String minifiedfilename) throws IOException {
+        String returnedstring = "";
         char space = ' ';
 
         //Creating the new minified file
         new File(minifiedfilename);
 
         //Creating the writer of the file
-       FileWriter myWriter = new FileWriter(minifiedfilename);
+        FileWriter myWriter = new FileWriter(minifiedfilename);
 
         //reading the original file and writing to the new file in a minified way
-            File myObj = new File(originalfilename);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                boolean flag = true;
-                String data = myReader.nextLine();
-                for (int i=0;i<data.length();i++){
-                    if (data.charAt(i)==space && flag )
-                        continue;
-                    flag = false;
-                    myWriter.write(data.charAt(i));
-                }
-              //  System.out.println(data);
-             // if(flag == false)
-                //    myWriter.write("\n");
+        boolean flag = true;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '\n') {
+                flag = true;
+                continue;
             }
-            myReader.close();
+            if (flag) {
+                if (data.charAt(i) == space) {
+                    continue;
+                }
+            }
+            if (data.charAt(i) != '\n' && data.charAt(i) != space)
+                flag = false;
+            if (data.charAt(i) == space && data.charAt(i+1) == '\n')
+                continue;
+            if (data.charAt(i) == space && data.charAt(i+1) == space)
+                continue;
+            returnedstring = returnedstring + "" + data.charAt(i);
 
+            //  System.out.println(data);
+            // if(flag == false)
+            //    myWriter.write("\n");
+        }
+        myWriter.write(returnedstring);
         //closing the writer of the file
-            myWriter.close();
-    }
+        myWriter.close();
 
-    public static void minifycaller (String originalfilename,String minifiedfilename){
+        return returnedstring;
+    }
+    public static String minifycaller (String data){
+        String x= "";
         try {
-            minify(originalfilename, minifiedfilename);
+            x= minify(data, "minified.xml");
         }
         catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
+        return x;
     }
 }

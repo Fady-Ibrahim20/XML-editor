@@ -26,7 +26,7 @@ public class Decompress {
     }
 
 
-    private static void decompress(String compressedfilename,String decompressedfilename) throws IOException {
+    private static String decompress(String compressedfilename,String decompressedfilename) throws IOException {
 
         //Creating the decompressed file
         new File(decompressedfilename);
@@ -80,17 +80,19 @@ public class Decompress {
         myWriter.write(decompressed);
       //  System.out.println(decompressed);
         myWriter.close();
-
+        return decompressed;
     }
 
-    public static void decompresscaller (String originalfilename,String compressedfilename){
+    public static String decompresscaller (){
+       String x = "";
         try {
-            decompress(originalfilename, compressedfilename);
+         x=   decompress("compressed.xml", "decompressed.xml");
         }
         catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        return x;
     }
 }
 
