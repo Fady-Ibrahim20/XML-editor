@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" prefHeight="514.0" prefWidth="456.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guil.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <BorderPane prefHeight="503.0" prefWidth="430.0">
+         <top>
+            <HBox prefHeight="80.0" prefWidth="416.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#brwosebutton" text="Browse">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label prefHeight="39.0" prefWidth="142.0" text="&lt;XMl Editor&gt;" textFill="#342da1">
+                     <HBox.margin>
+                        <Insets left="70.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#checkbutton" text="Check">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Minfiybutton" text="Minfy">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#Compressbutton" text="Comp">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#Fomratbutton" text="Format">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onAction="#convertbutton" text="TOJSON">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></Button>
+                  <Button layoutX="291.0" layoutY="10.0" mnemonicParsing="false" onAction="#Decompressbutton" text="Decomp">
+                     <HBox.margin>
+                        <Insets right="3.0" />
+                     </HBox.margin></Button>
+                  <Button layoutX="294.0" layoutY="10.0" mnemonicParsing="false" onAction="#correctbutton" text="Correct">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <left>
+            <TextArea fx:id="txt1" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <TextArea fx:id="txt2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</VBox>
