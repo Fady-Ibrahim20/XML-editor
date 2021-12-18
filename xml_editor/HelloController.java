@@ -1,6 +1,8 @@
 package com.example.guil;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -75,7 +77,7 @@ public class HelloController {
         try
         {
             String a ;
-          a=  correction.check_error(line, lineOfError, fixError);
+            a=  correction.check_error(line, lineOfError, fixError);
             fixError2 =  fixError;
             lineOfError2= lineOfError;
             txt2.appendText(a);
@@ -145,6 +147,21 @@ public class HelloController {
         String output3=output2.toString();
         formateed = output3 ;
         txt2.appendText(String.valueOf(output3));
+        new File("Formatted.xml");
+        FileWriter myWriter = null;
+        try{
+            myWriter = new FileWriter("Formatted.xml");
+            myWriter.write((String.valueOf(output3)));}
+        catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        try{
+            myWriter.close();}
+        catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -161,7 +178,20 @@ public class HelloController {
         tree.filltree(root, xmllist, i);
         xml2json.convert(root,str);
         txt2.appendText(String.valueOf(str));
-
-
+        new File("ToJSON.json");
+        FileWriter myWriter = null;
+        try{
+        myWriter = new FileWriter("ToJSON.json");
+        myWriter.write((String.valueOf(str)));}
+       catch (IOException e) {
+           System.out.println("An error occurred.");
+           e.printStackTrace();
+       }
+        try{
+    myWriter.close();}
+        catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
