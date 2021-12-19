@@ -4,9 +4,10 @@
 ## Table of contents
 + [Background](Background)
 + [Features](Features)
++ [Launch](Launch)
 + [Technologies](Technologies)
 ## Background
- XML Editoris used for doing different operations on XML files,It's an windows application.
+ XML Editor is used for doing different operations on XML files,It's an windows application.
  This editor let the user to choose the XML file which he want to do one of the offered operation or more than one opertion on the same XML file by pressing a Button from the buttons in the GUI.
 ## Features
 
@@ -15,5 +16,12 @@
 + Format/prettify the Unformatted XML file
 + Convert the XML file to JSON
 + Compress/Decompress the XML file or minify it.
+ 
+ ## Launch
+ To Launch the windows Application on your PC you have to install Java JDK
+ 
+ 
+ 
+ 
  ## Technologies
 + Java
