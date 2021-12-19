@@ -16,5 +16,4 @@
 + Convert the XML file to JSON
 + Compress/Decompress the XML file or minify it.
  ## Technologies
-Project is created with 
-*Java 
++ ```Java 
