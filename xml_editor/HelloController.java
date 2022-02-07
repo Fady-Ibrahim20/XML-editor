@@ -1,4 +1,6 @@
 package com.example.guil;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -8,14 +10,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import java.util.Scanner ;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
-import java.util.ArrayList;
 
 public class HelloController {
     @FXML
     private Label welcomeText;
     @FXML
      static String mystring ;
+    ArrayList<String> graph = new ArrayList<String>();
     static String st ,formateed  ;
     StringBuffer str = new  StringBuffer() ;
     ArrayList<String> fixError2 = new ArrayList<String>();
@@ -101,7 +107,7 @@ public class HelloController {
         String f ;
         f=Reader.Read();
         txt1.appendText(f);
-
+        Node.parsingtoarraylist(f, graph);
 
     }
     @FXML
@@ -194,4 +200,36 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void visualise () {
+        int[][] arr = new int[100][100];
+        int[] ids = new int[101];
+        int users = Graph.graph(graph, arr, ids);
+        DefaultDirectedGraph<String, DefaultEdge> g = Graph.createGraph(arr, ids, users);
+        try {
+            Graph.visualize(g);
+        } catch (IOException e) {
+        }
+
+        File file = new File("graph.png");
+        BufferedImage bufferedImage = null;
+        try {
+            bufferedImage = ImageIO.read(file);
+       }
+       catch (IOException e){};
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        JFrame jFrame = new JFrame();
+
+        jFrame.setLayout(new FlowLayout());
+
+        jFrame.setSize(500, 500);
+        JLabel jLabel = new JLabel();
+
+        jLabel.setIcon(imageIcon);
+        jFrame.add(jLabel);
+        jFrame.setVisible(true);
+
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
+
