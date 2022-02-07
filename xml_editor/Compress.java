@@ -102,7 +102,9 @@ public class Compress {
         return x;
 }
 
-    private static void compress(String originalfilename,String compressedfilename) throws IOException {
+    private static String compress(String originalfilename,String compressedfilename) throws IOException {
+       String returnedstring = "";
+
         //Creating the new compressed file
         new File(compressedfilename);
 
@@ -119,6 +121,7 @@ public class Compress {
             willcompress = willcompress + "" + data;
             }
         String compressed = Compress.compressinternal(willcompress);
+        returnedstring = returnedstring + "" + compressed;
         myWriter.write(compressed);
       //  System.out.println("Compressed String out of compression function: " + compressed);
         myReader.close();
@@ -137,17 +140,20 @@ public class Compress {
         myWriter2.close();
 
      //  System.out.println("Compression Scheme out of compression function: " + vec);
+        return returnedstring;
     }
 
-    public static void compresscaller (String originalfilename,String compressedfilename){
-        Minify.minifycaller( originalfilename, "minified.xml");
+    public static String compresscaller (String data){
+        Minify.minifycaller(data);
+       String x = "";
         try {
-            compress("minified.xml", compressedfilename);
+             x = compress("minified.xml", "compressed.xml");
         }
         catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        return x;
     }
 
 
