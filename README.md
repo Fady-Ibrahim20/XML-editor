@@ -16,6 +16,7 @@
 + Format/prettify the Unformatted XML file
 + Convert the XML file to JSON
 + Compress/Decompress the XML file or minify it.
++ Represent and visualize the relations between the users(in the XML file) using Directed Graph
  
  ## Launch
  To Launch the windows Application on your PC you have to install Java JDK
@@ -25,3 +26,5 @@
  
  ## Technologies
 + Java
++ jgrapht
++ jgraphx
