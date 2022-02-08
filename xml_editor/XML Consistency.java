@@ -91,7 +91,7 @@ public class Project2
                         }
                     }
                     endBracket = find_char(currentLine , '>') ;
-                    currentLine = currentLine.substring(endBracket +1) ;
+                    currentLine = currentLine.substring(endBracket +1) ; // To Check if there is any Data after the closing tag in the line
                    
                 }
             }
