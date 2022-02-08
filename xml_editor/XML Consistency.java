@@ -67,7 +67,7 @@ public class Project2
                             }
                             s.pop();
                         }
-                        else 
+                        else // Forgetted to close the tag ">"
                         {
                             lineOfError.add(i + 1,1);
                             int x = find_char(currentLine, '<') ;
