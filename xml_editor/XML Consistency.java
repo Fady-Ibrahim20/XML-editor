@@ -58,7 +58,7 @@ public class Project2
                             if(!no_error)
                             {
                                 lineOfError.add(i,1);
-                                while(!value_Stack.equals(s.peek()))
+                                while(!value_Stack.equals(s.peek())) // Fixing the Error by Closing the unclosed tags
                                 {
                                     correct =   "</" + s.peek() + ">" ;
                                     fixError.add(i , correct) ;
