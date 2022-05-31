@@ -14,7 +14,7 @@
 + it can view XML File
 +	Detect errors and correct them
 + Format/prettify the Unformatted XML file
-+ Formatting Details:if the Data between the two tags are small(<10Characters) it will be indented in one line,if the Data between the two tags are more than 10 Characters(in separate line)
+ Formatting Details:if the Data between the two tags are small(<10Characters) it will be indented in one line,if the Data between the two tags are more than 10 Characters(in separate line)
 
 
 + Convert the XML file to JSON
